@@ -1,0 +1,21 @@
+# Exclude version control files
+.git
+.gitignore
+
+# Exclude build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Exclude editor-specific files
+.vscode
+.idea
+
+# Exclude test files
+test
+
+# Exclude documentation and other non-essential files
+docs
+*.md
