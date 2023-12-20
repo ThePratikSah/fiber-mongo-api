@@ -7,4 +7,8 @@ Plans for now
 
 Run `docker-compose up` and test it on your machine.
 
+Run app locally
+- `cd fiber-mongo-api`
+- `go run main.go --seed`
+
 Please provide your feedback, it would help me grow. Thanks
