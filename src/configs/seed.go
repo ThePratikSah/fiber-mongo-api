@@ -4,7 +4,6 @@ import (
 	"context"
 	"fiber-mongo-api/src/models"
 	"log"
-	"os"
 	"time"
 
 	"go.mongodb.org/mongo-driver/mongo"
@@ -13,13 +12,6 @@ import (
 var UserCollection *mongo.Collection = GetCollection(DB, UsersCollection)
 
 func SeedData() {
-	flagFilePath := "/data/seed_data_initialized.txt"
-
-	if _, err := os.Stat(flagFilePath); err == nil {
-		log.Println("Data already seeded, skipping.")
-		return
-	}
-
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
@@ -34,5 +26,4 @@ func SeedData() {
 	}
 
 	log.Printf("Seeded %d users", len(result.InsertedIDs))
-	os.Create(flagFilePath)
 }
