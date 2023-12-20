@@ -9,6 +9,8 @@ services:
     depends_on:
       - mongodb
       - redis
+    volumes:
+      - data:/data
 
   mongodb:
     image: mongo:latest
@@ -27,3 +29,4 @@ services:
 volumes:
   mongodb-data:
   redis-data:
+  data:

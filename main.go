@@ -12,7 +12,7 @@ func main() {
 	// Fiber instance
 	app := fiber.New()
 
-	// test route
+	// health test route
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.SendString("Ok")
 	})
@@ -20,6 +20,10 @@ func main() {
 	// connect to mongodb
 	configs.ConnectDB()
 
+	// seed data for the first time
+	configs.SeedData()
+
+	// register routes here
 	routes.UserRoutes(app)
 
 	// Start server
