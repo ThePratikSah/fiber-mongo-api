@@ -5,6 +5,9 @@ services:
     build:
       context: .
     container_name: GoFiber
+    environment:
+      - MONGOURI=${MONGOURI}
+      - REDIS=${REDIS}
     restart: always
     ports:
       - "3000:3000"
